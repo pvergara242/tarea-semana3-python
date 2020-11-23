@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Lista de asignaturas</title>
+</head>
+<body>
+<table class="table">
+  <thead>
+    <tr>
+        <center><h1 >LISTA DE ASIGNATURAS</h1></center>
+      <th scope="col">#</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">AFORO</th>
+      <th scope="col">DURACION</th>
+        <th scope="col">ESTADO</th>
+        <th scope="col">ESTUDIANTE</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>    {{ materia.name  }}</td>
+      <td>     {{ materia.aforo  }}</td>
+      <td>      {{ materia.duration  }}</td>
+        <td>      {{ materia.estado  }}</td>
+           {%   for estudiante in estudiantes   %}
+              <td>      {{ estudiante.nombre }}</td>
+        {%endfor%}
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
