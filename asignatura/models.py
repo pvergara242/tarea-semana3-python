@@ -1,4 +1,5 @@
 from django.db import models
+from profesores.models import Profesor
 
 
 # Create your models here.
@@ -8,7 +9,7 @@ class Asignatura(models.Model) :
     duration = models.IntegerField(blank=False, null=True)
     estado = models.BooleanField('Activo/Inactivo', default=False)
 
-
+    profesores = models.ManyToManyField(Profesor, related_name='asignaturas')
     class Meta :
         ordering = ['name']
         verbose_name = 'Asignatura'
