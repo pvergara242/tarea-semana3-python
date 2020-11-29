@@ -26,10 +26,29 @@
       <td>     {{ estudiante.direccion  }}</td>
       <td>      {{ estudiante.telefono  }}</td>
         <td>    <button class="btn btn-secondary"><a href="http://127.0.0.1:8000/estudiantes/estudiante/{{estudiante.id}}/">informacion</a></button></td>
+          <td>    <button class="btn btn-secondary" data-href-template="http://127.0.0.1:8000/estudiantes/estudiante/{{estudiante.id}}/"><a>EDITAR</a></button></td>
+        <td>    <button class="btn btn-secondary"><a>ELIMINAR</a></button></td>
     </tr>
      {% endfor %}
-
   </tbody>
 </table>
+    <center><h1 >REGISTRO DE ESTUDIANTE</h1></center>
+
+<form method="POST" action="{% url 'estudiantes/:view' %}">
+    {%csrf_token%}
+  <div class="form-group">
+    <label >Nombre del estudiante</label>
+    <input type="text" class="form-control"  placeholder="Nombre del estudiante" name="nombre">
+  </div>
+  <div class="form-group">
+    <label>Dirección</label>
+    <input type="text" class="form-control"placeholder="Dirección" name="direccion">
+  </div>
+      <div class="form-group">
+    <label>Telefono</label>
+    <input type="text" class="form-control"placeholder="Telefono" name="telefono">
+  </div>
+    <center><button type="submit" class="btn btn-secondary" >REGISTRAR</button></center>
+</form>
 </body>
 </html>
