@@ -21,7 +21,7 @@ def profesores(req):
             return Response(status=status.HTTP_201_CREATED)
         else:
             return Response(status=status.HTTP_400_BAD_REQUEST,
-                            data=serialized.errors)
+                            data=profesores.errors)
 
 @api_view(['PUT','DELETE','GET'])
 def profesor(req,profesor_id) :
